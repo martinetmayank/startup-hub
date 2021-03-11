@@ -1,12 +1,29 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+<link rel="stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+<div class="container">
+<img src="/static/img/Logo.svg" class="logo" alt="logo">
+<div class="card">
 <form method="POST">
     {% csrf_token %}
+    <h1>Log in to your account</h1>
 
-    Username <input type="text" name="username" placeholder="username" required><br>
-    Password <input type="password" name="password" placeholder="password" required><br>
-    <input type="submit" value="send">
+    <label for="username">Username</label><br>
+    <i class="fa fa-user fa-2x fa-fw"></i>
+    <input type="text" id="username" name="username" placeholder="Username" class="input-user" required><br>
+
+    <label for="password">Password</label><br>
+    <i class="fa fa-lock fa-2x fa-fw"></i>
+    <input type="password" id="password" name="password" placeholder="Password" class="input-password" required><br>
+
+    <input type="submit" value="Log In" class="submit-btn">
 </form>
-Don't have an account? <a href="/signup" target="blank"><strong>register here</strong></a>!
-
+<div class="register-here">
+<p>Don't have an account? <a href="/signup" target="blank"><strong> Register Here!</strong></a></p>
+</div>
+</div>
+</div>
 <div>
     {% for message in messages %}
     <h3>{{ message }}</h3>
