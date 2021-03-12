@@ -4,30 +4,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+    <link rel="stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
     <title>Register</title>
 </head>
 
 <body>
-    <h1>Sign up Form</h1>
-    <ul>
-        {% for message in messages %}
-        <li>{{message}}</li>
-    </ul>
-    {% endfor %}
-
-    <form action="" method="POST">
-        {% csrf_token %}
-
-        First Name <input type="text" name="f_name" placeholder="first name"><br>
-        Last Name <input type="text" name="l_name" placeholder="last name"><br>
-        Username <input type="text" name="username" placeholder="username"><br>
-        Email <input type="email" name="email" placeholder="email"><br>
-        Password <input type="password" name="password1" placeholder="password"><br>
-        Confirm Password <input type="password" name="password2" placeholder="confirm password"><br>
-
-        <input type="submit">
-
-    </form>
+    <div class="container">
+        <img src="/static/img/Logo.svg" class="logo" alt="logo">
+        <div class="card">
+            <h1>Sign Up</h1>
+            
+            <form action="" method="POST">
+                {% csrf_token %}
+                
+                <label for="fname" class="label first-name">First Name</label><br>
+                <input type="text" id="fname" name="f_name" class="input fname" placeholder="First Name" required><br>
+                <i class="fa fa-user-circle-o fa-2x fa-fw"></i>
+                
+                <label for="lname" class="label last-name">Last Name </label><br>
+                <input type="text" id="lname" name="l_name" class="input lname" placeholder="Last Name" required><br>
+                <i class="fa fa-user-circle-o fa-2x fa-fw"></i>
+                
+                <label for="uname" class="label user-name">Username</label><br>
+                <input type="text" id="uname" name="username" class="input uname" placeholder="Username" required><br>
+                <i class="fa fa-user fa-2x fa-fw"></i>
+                
+                <label for="email" class="label email-id">Email</label><br>
+                <input type="email" id="email" name="email" class="input email" placeholder="Email" required><br>
+                <i class="fa fa-envelope fa-2x fa-fw"></i>
+                
+                <label for="pass" class="label password">Password</label><br>
+                <input type="password" id="pass" name="password1" class="input pass" placeholder="Password" pattern=".{6,}" required><br>
+                <i class="fa fa-lock fa-2x fa-fw lock1"></i>
+                
+                <label for="cpass" class="label cpassword">Confirm Password</label><br>
+                <input type="password" id="cpass" name="password2" class="input cpass" placeholder="Confirm Password" required><br>
+                <i class="fa fa-lock fa-2x fa-fw"></i>
+                
+                <ul class="msg">
+                    {% for message in messages %}
+                    <li>{{message}}</li>
+                </ul>
+                {% endfor %}
+                
+                <input type="submit" value="Sign Up" class="submit-btn">
+                
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>
