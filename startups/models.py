@@ -1,3 +1,9 @@
-from django.db import models
+from django.forms import ModelForm
+from . forms import AddForm
 
-# Create your models here.
+
+class AddStartupForm(ModelForm):
+    class Meta:
+        model = AddForm
+        # fields = ('name', 'email')
+        fields = '__all__'
