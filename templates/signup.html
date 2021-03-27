@@ -1,33 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-</head>
-
-<body>
-    <h1>Sign up Form</h1>
-    <ul>
-        {% for message in messages %}
-        <li>{{message}}</li>
-    </ul>
+{% block content %}
+<h2>Sign up</h2>
+<form method="post">
+    {% csrf_token %}
+    {% for field in form %}
+    <p>
+        {{ field.label_tag }}<br>
+        {{ field }}
+        {% if field.help_text %}
+        <small style="color: grey">{{ field.help_text }}</small>
+        {% endif %}
+        {% for error in field.errors %}
+        <p style="color: red">{{ error }}</p>
+        {% endfor %}
+    </p>
     {% endfor %}
-
-    <form action="" method="POST">
-        {% csrf_token %}
-
-        First Name <input type="text" name="f_name" placeholder="first name"><br>
-        Last Name <input type="text" name="l_name" placeholder="last name"><br>
-        Username <input type="text" name="username" placeholder="username"><br>
-        Email <input type="email" name="email" placeholder="email"><br>
-        Password <input type="password" name="password1" placeholder="password"><br>
-        Confirm Password <input type="password" name="password2" placeholder="confirm password"><br>
-
-        <input type="submit">
-
-    </form>
-</body>
-
-</html>
+    <button type="submit">Sign up</button>
+</form>
+{% endblock %}
