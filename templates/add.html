@@ -1,10 +1,84 @@
 <form method="post">
     {% csrf_token %}
-    {% for field in form %}
+
     <p>
-        {{ field.label_tag }}<br>
-        {{ field }}
+        <label class="name-label">
+            {{form.name.label_tag}}
+        </label><br>
+        {{form.name}}
+
     </p>
-    {% endfor %}
+
+    <p>
+        <label class="description-label">
+            {{form.description.label_tag}}
+        </label><br>
+        {{form.description}}
+
+    </p>
+
+    <p>
+        <label class="email-label">
+            {{form.email.label_tag}}
+        </label><br>
+        {{form.email}}
+
+    </p>
+
+    <p>
+        <label class="awards-label">
+            {{form.awards.label_tag}}
+        </label><br>
+        {{form.awards}}
+
+    </p>
+
+    <p>
+        <label class="youtube-label">
+            {{form.youtube.label_tag}}
+        </label><br>
+        {{form.youtube}}
+
+    </p>
+
+    <p>
+        <label class="linkedin-label">
+            {{form.linkedin.label_tag}}
+        </label><br>
+        {{form.linkedin}}
+
+    </p>
+
+    <p>
+        <label class="twitter-label">
+            {{form.twitter.label_tag}}
+        </label><br>
+        {{form.twitter}}
+
+    </p>
+
+    <p>
+        <label class="facebook-label">
+            {{form.facebook.label_tag}}
+        </label><br>
+        {{form.facebook}}
+
+    </p>
+
+    <p>
+        <label class="instagram-label">
+            {{form.instagram.label_tag}}
+        </label><br>
+        {{form.instagram}}
+
+    </p>
+
+    <p>
+        <label class="location-label">
+            {{form.location.label_tag}}
+        </label><br>
+        {{form.location}}
+
+    </p>
     <button type="submit">Add</button>
 </form>
