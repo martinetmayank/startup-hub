@@ -11,5 +11,4 @@ def add_startup(request):
 
     else:
         form = models.AddStartupForm()
-        print('form ', form)
-        return render(request, 'add.html', {'form': form})
+    return render(request, 'add.html', {'form': form})
