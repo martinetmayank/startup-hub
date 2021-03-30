@@ -1,0 +1,5 @@
+    {% for content in contents %}
+    {{ content.name}}<br>
+    {{ content.id }}<br>
+    {{ content.description }}<br><br>
+    <a href="/startups/{{content.id}}/update">Update </a> {% endfor %}
