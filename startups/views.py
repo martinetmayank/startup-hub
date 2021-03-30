@@ -12,3 +12,13 @@ def add_startup(request):
     else:
         form = models.AddStartupForm()
     return render(request, 'add.html', {'form': form})
+
+
+def error_404(request, exception):
+    data = {}
+    return render(request, 'error_404.html', data)
+
+
+def error_500(request):
+    data = {}
+    return render(request, 'error_500.html', data)
