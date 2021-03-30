@@ -1,53 +1,57 @@
-{% extends 'base.html' %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/signup.css' %}">
+<link rel="stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+
 
 {% block content %}
-<h2>Sign up</h2>
-<form method="post">
-    <style>
-        .username {
-            padding: 40px;
-        }
-    </style>
-    {% csrf_token %}
+<div class="container">
+    <img src="/static/img/Logo.svg" class="logo" alt="logo">
+    <div class="card">
+        <h1>Sign Up</h1>
+        <form method="post">
+            
+            {% csrf_token %}
 
-    <p>
-        <label class="username-label">{{ form.username.label_tag }}</label> <br>
-        {{ form.username }}
-    </p>
+            <label class="u_name label">{{ form.username.label_tag }}</label> <br>
+            {{ form.username }} <br>
+            <i class="fa fa-user fa-2x fa-fw"></i>
+            
 
-    <p>
-        <label class=" f_name-label">{{ form.first_name.label_tag }}</label> <br>
-        {{ form.first_name }}
+            <label class="firstname label">{{ form.first_name.label_tag }}</label> <br>
+            {{ form.first_name }} <br>
+            <i class="fa fa-user-circle-o fa-2x fa-fw"></i>
 
-    </p>
+            
+            <label class="lastname label">{{ form.last_name.label_tag }}</label> <br>
+            {{ form.last_name }} <br>
+            <i class="fa fa-user-circle-o fa-2x fa-fw"></i>
+            
+            
+            <label class="email_id label">{{ form.email.label_tag }}</label> <br>
+            {{ form.email }} <br>
+            <i class="fa fa-envelope fa-2x fa-fw"></i>
 
-    <p>
-        <label class="l_name-label">{{ form.last_name.label_tag }}</label> <br>
-        {{ form.last_name }}
-    </p>
+            
+            <label class="pass1 label">{{ form.password1.label_tag }}</label> <br>
+            {{ form.password1 }} <br>
+            <i class="fa fa-lock fa-2x fa-fw lock1"></i>
+            
+            
+            <label class="pass2 label">{{ form.password2.label_tag }}</label> <br>
+            {{ form.password2 }} <br>
+            <i class="fa fa-lock fa-2x fa-fw"></i>
+            
 
-    <p>
-        <label class="email-label">{{ form.email.label_tag }}</label> <br>
-        {{ form.email }}
-    </p>
+            {% for field in form %}
+            {% for error in field.errors %}
+            <p class="warnings">{{ error }}</p>
+            {% endfor %}
+            {% endfor %}
 
-    <p>
-        <label class="password1-label">{{ form.password1.label_tag }}</label> <br>
-        {{ form.password1 }}
-    </p>
-
-    <p>
-        <label class="password2-label">{{ form.password2.label_tag }}</label> <br>
-        {{ form.password2 }}
-    </p>
-
-    {% for field in form %}
-    {% for error in field.errors %}
-    <p style="color: red">{{ error }}</p>
-    {% endfor %}
-    {% endfor %}
-
-    <button type="submit">Sign up</button>
-    <div class="content">
-</form>
+            <button type="submit">Sign Up</button>
+            
+        </form>
+    </div>
+</div>
 {% endblock %}

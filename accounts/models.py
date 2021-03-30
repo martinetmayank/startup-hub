@@ -13,13 +13,13 @@ class SignUpForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['username'].widget.attrs.update(
-            {'placeholder': ('Username'), 'class': 'usernanme'})
+            {'placeholder': ('Username'), 'class': 'username'})
 
         self.fields['first_name'].widget.attrs.update(
-            {'placeholder': ('first name'), 'class': 'f_name'})
+            {'placeholder': ('First Name'), 'class': 'f_name'})
 
         self.fields['last_name'].widget.attrs.update(
-            {'placeholder': ('last name'), 'class': 'l_name'})
+            {'placeholder': ('Last Name'), 'class': 'l_name'})
 
         self.fields['email'].widget.attrs.update(
             {'placeholder': ('Email'), 'class': 'email'})
@@ -28,7 +28,7 @@ class SignUpForm(UserCreationForm):
             {'placeholder': ('Password'), 'class': 'password1'})
 
         self.fields['password2'].widget.attrs.update(
-            {'placeholder': ('Repeat password'), 'class': 'password2'})
+            {'placeholder': ('Confirm Password'), 'class': 'password2'})
 
     class Meta:
         model = User
