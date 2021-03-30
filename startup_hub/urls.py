@@ -16,6 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls.conf import include
+from startups import views as startups_views
+from django.conf.urls import handler404, handler500
+
+import startups
 
 from .import views
 
@@ -25,3 +29,6 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('startups/', include('startups.urls')),
 ]
+
+handler404 = 'startups.views.error_404'
+handler500 = 'startups.views.error_500'

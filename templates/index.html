@@ -11,4 +11,13 @@ Hello, {{ user.username|default:'Guest' }}!
     <a href="accounts/signup/">Signup</a>
     {% endif %}
 </div>
+
+<div class="contents">
+    {% for content in contents %}
+    {{ content.name}}<br>
+    {{ content.description }}<br>
+    {{ content.email }} <br>
+    {{ content.awards }}
+    {% endfor %}
+</div>
 {% endblock %}
