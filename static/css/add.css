@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto',sans-serif ;
+    font-weight: 300;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #787cd1;
+    height: max-content;
+    padding-bottom: 100px;
+}
+.logo{
+    width: 200px;
+    height: 200px;
+}
+.card{
+    background-color: white;
+    padding: 50px;
+    border-radius: 20px;
+    width: 700px;
+    box-shadow:
+    0 36.4px 28.9px -28px rgba(0, 0, 0, 0.25),
+    0 51.2px 57.3px -28px rgba(0, 0, 0, 0.265),
+    0 59.5px 84.3px -28px rgba(0, 0, 0, 0.273),
+    0 64.5px 107.9px -28px rgba(0, 0, 0, 0.274),
+    0 67.9px 127.6px -28px rgba(0, 0, 0, 0.266),
+    0 70.7px 144.7px -28px rgba(0, 0, 0, 0.248),
+    0 74.7px 160.6px -28px rgba(0, 0, 0, 0.215),
+    0 86px 176px -28px rgba(0, 0, 0, 0.156);
+}
+
+.card h1{
+    text-align: center;
+    padding-bottom: 50px;
+}
+.label{
+   display: block;
+   font-size: 20px;
+   margin: 50px 30px 70px 20px;
+
+}
+.startup-name,
+.startup-description,
+.startup-email,
+.startup-awards,
+.startup-youtube,
+.startup-linkedin,
+.startup-twitter,
+.startup-facebook,
+.startup-instagram,
+.startup-location{
+    position: relative;
+    top: -120px;
+    float: right;
+    width: 500px;
+    height: 50px;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    font-size: 20px;
+    text-align: left;
+    padding: 10px;
+    margin: 15px 30px;
+}
+
+.startup-name:focus,
+.startup-description:focus,
+.startup-email:focus,
+.startup-awards:focus,
+.startup-youtube:focus,
+.startup-linkedin:focus,
+.startup-twitter:focus,
+.startup-facebook:focus,
+.startup-instagram:focus,
+.startup-location:focus{
+    outline: 0;
+    border: 2px solid #302b70;
+}
+button{
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    height: 50px;
+    color: white;
+    background:linear-gradient(to right,#302b60,#787cd1);
+    cursor: pointer;
+}
+
+button:focus{
+    outline: 0;
+}
