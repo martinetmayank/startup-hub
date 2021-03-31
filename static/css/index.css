@@ -12,39 +12,71 @@
     height: 200px;
     background-color: #787cd1;
 }
-.heading{
-    display: inline-block;
-    display: flex;
-    justify-content: center;
-    font-size: 60px;
-    position: relative;
-    top: -80px;
-    color: white;
-}
 
 .hello{
     font-size: 20px;
     text-align: center;
     color: white;
+    position: relative;
+    top: -50px;
 }
 nav{
     background-color: #302b60;
+    height: 200px;
+}
+.search{
+    position: relative;
+    top: -80px;
+    left: 400px;
+    width: 400px;
+    height: 50px;
+    font-size: 20px;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 50px;
+}
+.fa-search{
+    position: relative;
+    top: -75px;
+    left: 350px;
+}
+.search:focus{
+    outline: 0;
+    border: 4px solid black;
 }
 
-.login,
-.signup{
+.dropdown:hover .dropdown-content {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+}
+
+
+.fa-user-circle-o{
     color: white;
-    font-size: 20px;
-    text-decoration: none;
-    padding: 21px;
+    float: right;
     position: relative;
-    top: -40px;
-    background-color: #787cd1;
+    top: -250px;
+    padding: 30px;
+}
+.dropdown-content{
+    display: none;
+    float: right;
+    position: relative;
+    top: -150px;
+    left: 100px;
     
 }
 
-.login:hover,
-.signup:hover{
+.drop{
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    background-color: #787cd1;
+    padding: 20px;
+}
+
+.drop:hover{
     background-color: #302b60;
    
 }
@@ -79,6 +111,7 @@ nav{
     text-align: center;
     font-size: 40px;
     border-bottom: 5px solid #302b70;
+
     color: #302b70;
     text-decoration: none;
     padding: 20px;
