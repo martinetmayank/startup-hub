@@ -1,23 +1,37 @@
-{% extends 'base.html' %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
 
 {% block content %}
-Hello, {{ user.username|default:'Guest' }}!
+<body>
 
-<div>
-    {% if user.is_authenticated %}
-    <a href="accounts/logout/">Logout</a>
-    {% else %}
-    <a href="accounts/login/">Login</a>
-    <a href="accounts/signup/">Signup</a>
-    {% endif %}
-</div>
+<nav>
+<img src="/static/img/Logo.svg" class="logo" alt="logo">
+<h1 class="heading">Welcome to Lets Startup</h1>
+<p class="hello">Hello, {{ user.username|default:'Guest' }}!</p>
 
-<div class="contents">
+
+    <div>
+        {% if user.is_authenticated %}
+        <a href="accounts/logout/">Logout</a>
+        {% else %}
+        <a href="accounts/login/" class="login">Login</a>
+        <a href="accounts/signup/" class="signup">Signup</a>
+        {% endif %}
+    </div>
+</nav>
+<div class="container">
     {% for content in contents %}
-    {{ content.name}}<br>
-    {{ content.description }}<br>
-    {{ content.email }} <br>
-    {{ content.awards }}
+    <div class="card">
+        <a href="" class="label name">{{ content.name }}</a><br>
+
+        <label class="label description">{{ content.description }}</label><br>
+
+        <label class="label email">{{ content.email }}</label><br>
+    </div>
     {% endfor %}
 </div>
+
+</body>
+
 {% endblock %}
