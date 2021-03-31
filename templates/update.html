@@ -1,5 +1,49 @@
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Update">
-</form>
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/add.css' %}">
+
+<div class="container">
+    <img src="/static/img/Logo.svg" class="logo" alt="logo">
+    <div class="card">
+        <h1>Update Your Startup Information</h1>
+        <form method="post">
+            {% csrf_token %}
+
+            <label class="name label">{{form.name.label_tag}}</label>
+            {{form.name}}
+    
+            <label class="description label">{{form.description.label_tag}}</label>
+            {{form.description}}
+
+            <label class="email label">{{form.email.label_tag}}</label>
+            {{form.email}}
+
+            <label class="awards label">{{form.awards.label_tag}}</label>
+            {{form.awards}}
+
+            <label class="youtube label">{{form.youtube.label_tag}}</label>
+            {{form.youtube}}
+
+            <label class="linkedin label">{{form.linkedin.label_tag}}</label>
+            {{form.linkedin}}
+
+        
+            <label class="twitter label">{{form.twitter.label_tag}}</label>
+            {{form.twitter}}
+
+            
+            <label class="facebook label">{{form.facebook.label_tag}}</label>
+            {{form.facebook}}
+
+            <label class="instagram label">{{form.instagram.label_tag}}</label>
+            {{form.instagram}}
+
+            <label class="location label">{{form.location.label_tag}}</label>
+            {{form.location}}
+
+            
+            <button type="submit">Update</button>
+
+        </form>
+    </div>
+</div>
