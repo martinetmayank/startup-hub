@@ -1,5 +1,24 @@
+   {% load static %}
+
+<link rel="stylesheet" href="{% static 'css/allstartups.css' %}">
+
+{% block content %}
+<body>
+
+<h1>Startups</h1>
+<div class="container">
     {% for content in contents %}
-    {{ content.name}}<br>
-    {{ content.id }}<br>
-    {{ content.description }}<br><br>
-    <a href="/startups/{{content.id}}/update">Update </a> {% endfor %}
+    <div class="card">
+        <label  class="label name">{{ content.name }}</label><br>
+        <label  class="label description">{{ content.description|truncatechars:50 }} </label><br>
+        <a class="relative"href="/startups/{{content.id}}/update">Update </a>
+
+        
+    </div>
+    {% endfor %}
+</div>
+
+</body>
+
+{% endblock %}
+     
