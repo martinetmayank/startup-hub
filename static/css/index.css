@@ -1,30 +1,32 @@
-*{
+* {
     margin: 0;
     padding: 0;
-    font-family: 'Roboto',sans-serif ;
+    font-family: 'Roboto', sans-serif;
     font-weight: 300;
-    
+
 }
 
 
-.logo{
+.logo {
     width: 200px;
     height: 200px;
     background-color: #787cd1;
 }
 
-.hello{
+.hello {
     font-size: 20px;
     text-align: center;
     color: white;
     position: relative;
     top: -50px;
 }
-nav{
+
+nav {
     background-color: #302b60;
     height: 200px;
 }
-.search{
+
+.search {
     position: relative;
     top: -80px;
     left: 400px;
@@ -35,12 +37,14 @@ nav{
     border: 2px solid black;
     border-radius: 50px;
 }
-.fa-search{
+
+.fa-search {
     position: relative;
     top: -75px;
     left: 350px;
 }
-.search:focus{
+
+.search:focus {
     outline: 0;
     border: 4px solid black;
 }
@@ -48,27 +52,28 @@ nav{
 .dropdown:hover .dropdown-content {
     display: flex;
     flex-direction: column;
-    width: 150px;
+    width: 100px;
 }
 
 
-.fa-user-circle-o{
+.fa-user-circle-o {
     color: white;
     float: right;
     position: relative;
     top: -250px;
     padding: 30px;
 }
-.dropdown-content{
+
+.dropdown-content {
     display: none;
     float: right;
     position: relative;
     top: -150px;
     left: 100px;
-    
+
 }
 
-.drop{
+.drop {
     color: white;
     font-size: 20px;
     text-decoration: none;
@@ -76,20 +81,20 @@ nav{
     padding: 20px;
 }
 
-.drop:hover{
+.drop:hover {
     background-color: #302b60;
-   
+
 }
 
-.container{
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    
+
 }
 
-.card{
+.card {
     display: flex;
     margin: 50px;
     flex-direction: column;
@@ -97,17 +102,17 @@ nav{
     width: 700px;
     border-radius: 30px;
     box-shadow:
-    0 36.4px 28.9px -20px rgba(0, 0, 0, 0.25),
-    0 51.2px 57.3px -20px rgba(0, 0, 0, 0.265),
-    0 59.5px 84.3px -20px rgba(0, 0, 0, 0.273),
-    0 64.5px 107.9px -20px rgba(0, 0, 0, 0.274),
-    0 67.9px 127.6px -20px rgba(0, 0, 0, 0.266),
-    0 70.7px 144.7px -20px rgba(0, 0, 0, 0.248),
-    0 74.7px 160.6px -20px rgba(0, 0, 0, 0.215),
-    0 86px 176px -20px rgba(0, 0, 0, 0.156);
+        0 36.4px 28.9px -20px rgba(0, 0, 0, 0.25),
+        0 51.2px 57.3px -20px rgba(0, 0, 0, 0.265),
+        0 59.5px 84.3px -20px rgba(0, 0, 0, 0.273),
+        0 64.5px 107.9px -20px rgba(0, 0, 0, 0.274),
+        0 67.9px 127.6px -20px rgba(0, 0, 0, 0.266),
+        0 70.7px 144.7px -20px rgba(0, 0, 0, 0.248),
+        0 74.7px 160.6px -20px rgba(0, 0, 0, 0.215),
+        0 86px 176px -20px rgba(0, 0, 0, 0.156);
 }
 
-.name{
+.name {
     text-align: center;
     font-size: 40px;
     border-bottom: 5px solid #302b70;
@@ -120,12 +125,12 @@ nav{
 }
 
 
-.description{
+.description {
     font-size: 25px;
     padding: 10px;
 }
 
-.email{
+.email {
     font-size: 15px;
     padding: 10px;
 }
