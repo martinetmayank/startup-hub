@@ -31,6 +31,11 @@ def update_startup(request, id):
     return render(request, 'update.html', {'form': form})
 
 
+def view_startup(request, id):
+    obj = forms.AddForm.objects.filter(id=id)
+    return render(request, 'details.html', {'contents': obj})
+
+
 def display_startup(request):
     content = forms.AddForm.objects.all()
     print(content)
