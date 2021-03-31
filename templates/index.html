@@ -1,24 +1,32 @@
 {% load static %}
 
 <link rel="stylesheet" href="{% static 'css/index.css' %}">
+<link rel="stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 {% block content %}
 <body>
 
 <nav>
 <img src="/static/img/Logo.svg" class="logo" alt="logo">
-<h1 class="heading">Welcome to Lets Startup</h1>
+<input type="text" placeholder="Search..." class="search">
+<i class="fa fa-search fa-2x fa-fw"></i>
 <p class="hello">Hello, {{ user.username|default:'Guest' }}!</p>
 
 
-    <div>
-        {% if user.is_authenticated %}
-        <a href="accounts/logout/">Logout</a>
-        {% else %}
-        <a href="accounts/login/" class="login">Login</a>
-        <a href="accounts/signup/" class="signup">Signup</a>
-        {% endif %}
+    <div class="dropdown">
+        <a href=""><i class="fa fa-user-circle-o fa-3x fa-fw"></i></a>
+        <div class="dropdown-content">
+            {% if user.is_authenticated %}
+            <a href="accounts/logout/" class="drop logout">Logout</a>
+            <a href="startups/add/" class="drop add">Add Startup</a>
+            <a href="startups/view/" class="drop update">Update Startup</a>
+            {% else %}
+            <a href="accounts/login/" class="drop login">Login</a>
+            <a href="accounts/signup/" class="drop signup">Signup</a>
+            {% endif %}
+        </div>
     </div>
+   
 </nav>
 <div class="container">
     {% for content in contents %}
