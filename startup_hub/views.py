@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from startups import forms
+from startups import forms, models
 
 
 def home(request):
-    contents = forms.AddForm.objects.all()
+    contents = models.StartupModel.objects.all()
     # print(content)
     return render(request, 'index.html', {'contents': contents})

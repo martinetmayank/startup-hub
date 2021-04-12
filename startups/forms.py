@@ -1,14 +1,23 @@
-from django.db import models
+from django import forms
+from django.forms import ModelForm
+from . models import StartupModel
 
 
-class AddForm(models.Model):
-    name = models.CharField(max_length=32)
-    description = models.TextField(max_length=256)
-    email = models.EmailField(max_length=64)
-    awards = models.TextField(max_length=128, blank=True)
-    youtube = models.URLField(blank=True)
-    linkedin = models.URLField(blank=True)
-    twitter = models.URLField(blank=True)
-    facebook = models.URLField(blank=True)
-    instagram = models.URLField(blank=True)
-    location = models.CharField(max_length=128)
+class AddStartupForm(ModelForm):
+    class Meta:
+        model = StartupModel
+        # fields = ('name', 'email')
+        fields = '__all__'
+        exclude = ('uid', )
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'startup-name'}),
+            'description': forms.Textarea(attrs={'class': 'startup-description'}),
+            'email': forms.EmailInput(attrs={'class': 'startup-email'}),
+            'awards': forms.Textarea(attrs={'class': 'startup-awards'}),
+            'youtube': forms.TextInput(attrs={'class': 'startup-youtube'}),
+            'linkedin': forms.TextInput(attrs={'class': 'startup-linkedin'}),
+            'twitter': forms.TextInput(attrs={'class': 'startup-twitter'}),
+            'facebook': forms.TextInput(attrs={'class': 'startup-facebook'}),
+            'instagram': forms.TextInput(attrs={'class': 'startup-instagram'}),
+            'location': forms.TextInput(attrs={'class': 'startup-location'}),
+        }

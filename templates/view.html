@@ -1,24 +1,24 @@
    {% load static %}
 
-<link rel="stylesheet" href="{% static 'css/allstartups.css' %}">
+   <link rel="stylesheet" href="{% static 'css/allstartups.css' %}">
 
-{% block content %}
-<body>
+   {% block content %}
 
-<h1>Startups</h1>
-<div class="container">
-    {% for content in contents %}
-    <div class="card">
-        <label  class="label name">{{ content.name }}</label><br>
-        <label  class="label description">{{ content.description|truncatechars:50 }} </label><br>
-        <a class="relative"href="/startups/{{content.id}}/update">Update </a>
+   <body>
 
-        
-    </div>
-    {% endfor %}
-</div>
+       <h1>Startups</h1>
+       <div class="container">
+           {% for content in contents %}
+           <div class="card">
+               <label class="label name">{{ content.name }}</label><br>
+               <label class="label description">{{ content.description|truncatechars:50 }} </label><br>
+               <a class="relative" href="/startups/update/{{content.uid}}">Update </a>
 
-</body>
 
-{% endblock %}
-     
+           </div>
+           {% endfor %}
+       </div>
+
+   </body>
+
+   {% endblock %}

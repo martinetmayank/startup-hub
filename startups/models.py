@@ -1,22 +1,23 @@
-from django import forms
-from django.forms import ModelForm, widgets
-from . forms import AddForm
+from django.db import models
+import uuid
 
 
-class AddStartupForm(ModelForm):
-    class Meta:
-        model = AddForm
-        # fields = ('name', 'email')
-        fields = '__all__'
-        widgets = {
-            'name': forms.TextInput(attrs={'class': 'startup-name'}),
-            'description': forms.Textarea(attrs={'class': 'startup-description'}),
-            'email': forms.EmailInput(attrs={'class': 'startup-email'}),
-            'awards': forms.Textarea(attrs={'class': 'startup-awards'}),
-            'youtube': forms.TextInput(attrs={'class': 'startup-youtube'}),
-            'linkedin': forms.TextInput(attrs={'class': 'startup-linkedin'}),
-            'twitter': forms.TextInput(attrs={'class': 'startup-twitter'}),
-            'facebook': forms.TextInput(attrs={'class': 'startup-facebook'}),
-            'instagram': forms.TextInput(attrs={'class': 'startup-instagram'}),
-            'location': forms.TextInput(attrs={'class': 'startup-location'}),
-        }
+class StartupModel(models.Model):
+    # uid = models.UUIDField(primary_key=True,
+    #                        editable=False,
+    #                        blank=False,
+    #                        default=uuid.uudi4)
+    uid = models.CharField(
+        max_length=100,
+        default=uuid.uuid4().hex,
+        primary_key=True)
+    name = models.CharField(max_length=32)
+    description = models.TextField(max_length=256)
+    email = models.EmailField(max_length=64)
+    awards = models.TextField(max_length=128, blank=True)
+    youtube = models.URLField(blank=True)
+    linkedin = models.URLField(blank=True)
+    twitter = models.URLField(blank=True)
+    facebook = models.URLField(blank=True)
+    instagram = models.URLField(blank=True)
+    location = models.CharField(max_length=128)
