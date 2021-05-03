@@ -1,16 +1,9 @@
+from django.contrib.auth.models import User
 from django.db import models
-import uuid
 
 
 class StartupModel(models.Model):
-    # uid = models.UUIDField(primary_key=True,
-    #                        editable=False,
-    #                        blank=False,
-    #                        default=uuid.uudi4)
-    uid = models.CharField(
-        max_length=100,
-        default=uuid.uuid4().hex,
-        primary_key=True)
+    startup_user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=32)
     description = models.TextField(max_length=256)
     email = models.EmailField(max_length=64)

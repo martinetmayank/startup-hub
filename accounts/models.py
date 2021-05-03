@@ -9,7 +9,7 @@ class SignUpForm(UserCreationForm):
     first_name = forms.CharField(max_length=30, required=True)
     last_name = forms.CharField(max_length=30, required=True)
     email = forms.EmailField(max_length=128, required=True)
-
+    
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['username'].widget.attrs.update(
@@ -29,6 +29,9 @@ class SignUpForm(UserCreationForm):
 
         self.fields['password2'].widget.attrs.update(
             {'placeholder': ('Confirm Password'), 'class': 'password2'})
+
+    def __str__(self) -> str:
+        return f'{self.first_name} {self.last_name}'
 
     class Meta:
         model = User

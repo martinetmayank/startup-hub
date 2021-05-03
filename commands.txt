@@ -1,5 +1,0 @@
-If Mongod is in Path
-    mongod --dbpath="C:\Users\Mayank\Desktop\Work\Capstone 1 project\db"
-
-else:
-    "path/of/mongod/" --dbpath="path/of/db/"

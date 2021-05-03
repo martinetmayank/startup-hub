@@ -7,10 +7,16 @@ from startups import forms
 def add_startup(request):
     if request.method == 'POST':
         form = AddStartupForm(request.POST)
+        print(form.is_valid())
         if form.is_valid():
+            detail = form.save(commit=False)
+            detail.startup_user = request.user
+            detail.save()
             # form.save()
             try:
+                print(request.user)
                 form.save()
+
             except Exception as e:
                 print('\n\n\n')
                 print(e)
@@ -22,7 +28,8 @@ def add_startup(request):
 
 
 def update_startup(request, str):
-    obj = get_object_or_404(models.StartupModel, uid=str)
+    obj = get_object_or_404(models.StartupModel, id=str,
+                            startup_user=request.user)
     # print(f'\n\n\nobj {obj}')
     form = AddStartupForm(request.POST, instance=obj)
 
@@ -35,12 +42,13 @@ def update_startup(request, str):
 
 
 def view_startup(request, str):
-    obj = models.StartupModel.objects.filter(uid=str)
+    obj = models.StartupModel.objects.filter(id=str)
     return render(request, 'details.html', {'contents': obj})
 
 
 def display_startup(request):
-    content = models.StartupModel.objects.all()
+    # content = models.StartupModel.objects.all()
+    content = models.StartupModel.objects.filter(startup_user=request.user)
     print(content)
     return render(request, 'view.html', {'contents': content})
 

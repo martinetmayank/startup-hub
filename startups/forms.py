@@ -6,9 +6,8 @@ from . models import StartupModel
 class AddStartupForm(ModelForm):
     class Meta:
         model = StartupModel
-        # fields = ('name', 'email')
         fields = '__all__'
-        exclude = ('uid', )
+        exclude = ('startup_user',)
         widgets = {
             'name': forms.TextInput(attrs={'class': 'startup-name'}),
             'description': forms.Textarea(attrs={'class': 'startup-description'}),
