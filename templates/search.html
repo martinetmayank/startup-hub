@@ -1,11 +1,51 @@
-<div class="container">
-    {% for content in contents %}
-    <div class="card">
-        <a href="/startups/details/{{ content.id }}" class="label name">{{ content.name }}</a><br>
+{% load static %}
 
-        <label class="label description">{{ content.description }}</label><br>
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
 
-        <label class="label email">{{ content.email }}</label><br>
+{% block content %}
+
+<body>
+
+    <nav>
+        <img src="/static/img/Logo.svg" class="logo" alt="logo">
+        <h1 class="top-heading">Startup Hub</h1>
+        <form action="/search" method="GET">
+            <input type="text" placeholder="Search..." class="search" name="search">
+            <button type="submit" class="btn-search">Search</button>
+        </form>
+        <i class="fa fa-search fa-2x fa-fw"></i>
+        <b><p class="hello">Hello, {{ user.username|default:'Guest' }}!</p></b>
+
+
+        <div class="dropdown">
+            <a href=""><i class="fas fa-user fa-3x"></i></a>
+            <div class="dropdown-content">
+                {% if user.is_authenticated %}
+                <a href="accounts/logout/" class="drop logout">Logout</a>
+                <a href="startups/add/" class="drop add">Add Startup</a>
+                <a href="startups/view/" class="drop update">Update Startup</a>
+                {% else %}
+                <a href="accounts/login/" class="drop login">Login</a>
+                <a href="accounts/signup/" class="drop signup">Signup</a>
+                {% endif %}
+            </div>
+        </div>
+
+    </nav>
+    <div class="container">
+        {% for content in contents %}
+        <div class="card">
+            <a href="/startups/details/{{ content.id }}" class="label name">{{ content.name }}</a><br>
+
+            <label class="label description">{{ content.description }}</label><br>
+
+            <label class="label email">{{ content.email }}</label><br>
+        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
-</div>
+    {% include 'footer.html'%}
+
+</body>
+
+{% endblock %}
