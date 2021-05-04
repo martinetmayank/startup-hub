@@ -10,7 +10,7 @@ class AddStartupForm(ModelForm):
         exclude = ('startup_user',)
         widgets = {
             'name': forms.TextInput(attrs={'class': 'startup-name'}),
-            'description': forms.Textarea(attrs={'class': 'startup-description'}),
+            'description': forms.Textarea(attrs={'class': 'startup-description','rows':4}),
             'email': forms.EmailInput(attrs={'class': 'startup-email'}),
             'awards': forms.Textarea(attrs={'class': 'startup-awards'}),
             'youtube': forms.TextInput(attrs={'class': 'startup-youtube'}),

@@ -41,18 +41,56 @@
 .label{
    display: block;
    font-size: 20px;
-   margin: 50px 30px 70px 20px;
+   margin: 70px 30px 70px 20px;
 
 }
+
+.description,
+.awards{
+    position: relative;
+    top: 20px;
+}
+.email{
+    position: relative;
+    top: 40px;
+}
+.youtube{
+    position: relative;
+    top: 15px;
+}
+
+.startup-description{
+    resize: none;
+    position: relative;
+    top: -120px;
+    float: right;
+    width: 500px;
+    height: 100px;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    font-size: 20px;
+    text-align: left;
+    padding: 10px;
+    margin: 15px 30px;
+    
+}
+.startup-awards{
+    resize: none;
+    position: relative;
+    top: -120px;
+    float: right;
+    width: 500px;
+    height: 50px;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    font-size: 20px;
+    text-align: left;
+    padding: 10px;
+    margin: 15px 30px;
+}
 .startup-name,
-.startup-description,
 .startup-email,
-.startup-awards,
 .startup-youtube,
-.startup-linkedin,
-.startup-twitter,
-.startup-facebook,
-.startup-instagram,
 .startup-location{
     position: relative;
     top: -120px;
@@ -72,10 +110,6 @@
 .startup-email:focus,
 .startup-awards:focus,
 .startup-youtube:focus,
-.startup-linkedin:focus,
-.startup-twitter:focus,
-.startup-facebook:focus,
-.startup-instagram:focus,
 .startup-location:focus{
     outline: 0;
     border: 2px solid #302b70;
@@ -95,3 +129,4 @@ button{
 button:focus{
     outline: 0;
 }
+
