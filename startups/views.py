@@ -61,3 +61,8 @@ def error_404(request, exception):
 def error_500(request):
     data = {}
     return render(request, 'error_500.html', data)
+
+
+def delete_startup(request, str):
+    obj = models.StartupModel.objects.filter(id=str).delete()
+    return render(request, 'index.html')
