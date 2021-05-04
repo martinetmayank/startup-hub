@@ -19,7 +19,6 @@ from django.urls.conf import include
 from startups import views as startups_views
 from django.conf.urls import handler404, handler500
 
-import startups
 
 from .import views
 
@@ -28,6 +27,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls')),
     path('startups/', include('startups.urls')),
+    path('search/', views.search, name='searchbar'),
 ]
 
 handler404 = 'startups.views.error_404'

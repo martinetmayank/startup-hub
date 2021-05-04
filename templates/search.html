@@ -1,0 +1,11 @@
+<div class="container">
+    {% for content in contents %}
+    <div class="card">
+        <a href="/startups/details/{{ content.id }}" class="label name">{{ content.name }}</a><br>
+
+        <label class="label description">{{ content.description }}</label><br>
+
+        <label class="label email">{{ content.email }}</label><br>
+    </div>
+    {% endfor %}
+</div>
