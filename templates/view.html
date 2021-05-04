@@ -1,23 +1,35 @@
    {% load static %}
 
-   <link rel="stylesheet" href="{% static 'css/allstartups.css' %}">
+   <link rel="stylesheet" href="{% static 'css/view.css' %}">
 
    {% block content %}
 
    <body>
 
-       <h1>Startups</h1>
+       <h1 class="heading">Startups</h1>
        <div class="container">
-           {% for content in contents %}
-           <div class="card">
-               <label class="label name">{{ content.name }}</label><br>
-               <label class="label description">{{ content.description|truncatechars:50 }} </label><br>
-               <a class="relative" href="/startups/update/{{content.id}}">Update </a>
-               <a class="relative" href="/startups/delete/{{content.id}}">Delete </a>
-
-
-           </div>
-           {% endfor %}
+           
+           <table>
+               <tr>
+                   <th>Name</th>
+                   <th>Description</th>
+                   <th>Email Id</th>
+                   <th colspan="2">Update/Delete</th>
+               </tr>
+               {% for content in contents %}
+               <tr>
+                    <td><label class="label name">{{ content.name }}</label></td>
+                    <td><label class="label description">{{ content.description|truncatechars:50 }}</label></td>
+                    <td><label class="label email">{{ content.email }}</label></td>
+                    <td>
+                    <a class="relative" href="/startups/update/{{content.id}}">Update </a><br><br>
+                    <a class="relative" href="/startups/delete/{{content.id}}">Delete </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+           
+           
        </div>
 
    </body>

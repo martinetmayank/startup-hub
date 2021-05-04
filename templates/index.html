@@ -1,7 +1,7 @@
 {% load static %}
 
 <link rel="stylesheet" href="{% static 'css/index.css' %}">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
 
 {% block content %}
 
@@ -18,7 +18,7 @@
 
 
         <div class="dropdown">
-            <a href=""><i class="fa fa-user-circle-o fa-3x fa-fw"></i></a>
+            <a href=""><i class="fas fa-user fa-3x"></i></a>
             <div class="dropdown-content">
                 {% if user.is_authenticated %}
                 <a href="accounts/logout/" class="drop logout">Logout</a>
@@ -43,6 +43,7 @@
         </div>
         {% endfor %}
     </div>
+    {% include 'footer.html'%}
 
 </body>
 
