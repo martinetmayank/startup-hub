@@ -1,7 +1,6 @@
 from startups.forms import AddStartupForm
 from django.shortcuts import get_object_or_404, render, redirect
 from . import models
-from startups import forms
 
 
 def add_startup(request):
@@ -65,4 +64,4 @@ def error_500(request):
 
 def delete_startup(request, str):
     obj = models.StartupModel.objects.filter(id=str).delete()
-    return render(request, 'index.html')
+    return redirect('home')
