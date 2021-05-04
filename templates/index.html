@@ -9,12 +9,13 @@
 
     <nav>
         <img src="/static/img/Logo.svg" class="logo" alt="logo">
+        <h1 class="top-heading">Startup Hub</h1>
         <form action="/search" method="GET">
             <input type="text" placeholder="Search..." class="search" name="search">
-            <button type="submit">Search</button>
+            <button type="submit" class="btn-search">Search</button>
         </form>
         <i class="fa fa-search fa-2x fa-fw"></i>
-        <p class="hello">Hello, {{ user.username|default:'Guest' }}!</p>
+        <b><p class="hello">Hello, {{ user.username|default:'Guest' }}!</p></b>
 
 
         <div class="dropdown">

@@ -5,6 +5,14 @@
     font-weight: 300;
 
 }
+.top-heading{
+    position: relative;
+    top: -170px;
+    left: 700px;
+    color: white;
+    font-size: 50px;
+    
+}
 
 
 .logo {
@@ -14,11 +22,11 @@
 }
 
 .hello {
-    font-size: 20px;
+    font-size: 30px;
     text-align: center;
-    color: white;
+    color: #302b70;
     position: relative;
-    top: -50px;
+    top: -100px;
 }
 
 nav {
@@ -28,8 +36,8 @@ nav {
 
 .search {
     position: relative;
-    top: -80px;
-    left: 400px;
+    top: -120px;
+    left: 630px;
     width: 400px;
     height: 50px;
     font-size: 20px;
@@ -37,11 +45,26 @@ nav {
     border: 2px solid black;
     border-radius: 50px;
 }
+.btn-search{
+    position: relative;
+    top: -120px;
+    left: 630px;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 20px;
+    cursor: pointer;
+    color: black;
+    font-size: 20px;
+}
+.btn-search:hover{
+    color: white;
+    background-color: black;
+}
 
 .fa-search {
     position: relative;
-    top: -75px;
-    left: 350px;
+    top: -160px;
+    left: 980px;
 }
 
 .search:focus {
@@ -60,7 +83,7 @@ nav {
     color: white;
     float: right;
     position: relative;
-    top: -250px;
+    top: -370px;
     padding: 30px;
 }
 
@@ -68,7 +91,7 @@ nav {
     display: none;
     float: right;
     position: relative;
-    top: -150px;
+    top: -280px;
     left: 100px;
 
 }

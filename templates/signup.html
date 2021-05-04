@@ -1,10 +1,13 @@
 {% load static %}
 
 <link rel="stylesheet" href="{% static 'css/signup.css' %}">
-<link rel="stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"> 
 
 
 {% block content %}
+<body>
+    
+
 <div class="container">
     <img src="/static/img/Logo.svg" class="logo" alt="logo">
     <div class="card">
@@ -20,12 +23,12 @@
 
             <label class="firstname label">{{ form.first_name.label_tag }}</label> <br>
             {{ form.first_name }} <br>
-            <i class="fa fa-user-circle-o fa-2x fa-fw"></i>
+            <i class="fa fa-user fa-2x fa-fw"></i>
 
             
             <label class="lastname label">{{ form.last_name.label_tag }}</label> <br>
             {{ form.last_name }} <br>
-            <i class="fa fa-user-circle-o fa-2x fa-fw"></i>
+            <i class="fa fa-user fa-2x fa-fw"></i>
             
             
             <label class="email_id label">{{ form.email.label_tag }}</label> <br>
@@ -54,4 +57,8 @@
         </form>
     </div>
 </div>
+
+{% include 'footer.html'%}
+
+</body>
 {% endblock %}

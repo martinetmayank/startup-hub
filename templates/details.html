@@ -1,3 +1,6 @@
+<body>
+    
+
 {% for content in contents %}
 <b>Name</b>: {{ content.name }} <br>
 <b>Description</b>: {{ content.description }} <br>
@@ -6,3 +9,7 @@
 <b>Youtube</b>: {{ content.youtube }} <br>
 <b>Location</b>: {{ content.location }} <br>
 {% endfor %}
+
+{% include 'footer.html'%}
+
+</body>

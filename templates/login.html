@@ -2,6 +2,9 @@
 
 <link rel="stylesheet" href="{% static 'css/login.css' %}">
 <link rel="stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+<body>
+    
+
 <div class="container">
     <img src="/static/img/Logo.svg" class="logo" alt="logo">
     <div class="card">
@@ -20,7 +23,7 @@
             <input type="submit" value="Log In" class="submit-btn">
         </form>
         <div class="register-here">
-            <p>Don't have an account? <a href="/accounts/signup/" target="blank" style="text-decoration: none;"><strong class="register-link"> Register Here!</strong></a></p>
+            <p style="color: black;">Don't have an account? <a href="/accounts/signup/" target="blank" style="text-decoration: none;"><strong class="register-link"> Register Here!</strong></a></p>
         </div>
 
     <div>
@@ -31,3 +34,7 @@
  
     </div>
 </div>
+
+{% include 'footer.html'%}
+
+</body>
