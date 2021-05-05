@@ -6,6 +6,6 @@ urlpatterns = [
     path('update/<str>', views.update_startup, name='update'),
     path('details/<str>/', views.view_startup, name='details'),
     path('delete/<str>/', views.delete_startup, name='delete'),
-    path('view/', views.display_startup, name='view'),
+    path('view/', views.display_my_startups, name='view'),
 
 ]
