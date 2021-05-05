@@ -1,6 +1,6 @@
 {% load static %}
 
-   <link rel="stylesheet" href="{% static 'css/details.css' %}">
+<link rel="stylesheet" href="{% static 'css/details.css' %}">
 
 <body>
     <h1 class="heading">Startup Details</h1>
@@ -8,7 +8,7 @@
 
     <table>
         {% for content in contents %}
-        
+
         <tr>
             <th>Name</th>
             <td><label class="label name">{{ content.name }}</label></td>
@@ -39,12 +39,17 @@
             <td><label class="label location">{{ content.location }}</label></td>
         </tr>
 
+        <tr>
+            <th>Date Added</th>
+            <td><label class="label location">{{ content.date_added }}</label></td>
+        </tr>
+
         {% endfor %}
     </table>
-    
 
 
 
-{% include 'footer.html'%}
+
+    {% include 'footer.html'%}
 
 </body>

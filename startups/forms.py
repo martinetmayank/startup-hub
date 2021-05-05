@@ -7,7 +7,7 @@ class AddStartupForm(ModelForm):
     class Meta:
         model = StartupModel
         fields = '__all__'
-        exclude = ('startup_user',)
+        exclude = ('startup_user', 'date_added',)
         widgets = {
             'name': forms.TextInput(attrs={'class': 'startup-name'}),
             'description': forms.Textarea(attrs={'class': 'startup-description', 'rows': 4}),

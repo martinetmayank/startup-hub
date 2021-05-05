@@ -1,11 +1,10 @@
 from django.db.models.query_utils import Q
 from django.shortcuts import render
-from startups import forms, models
+from startups import models
 
 
 def home(request):
     contents = models.StartupModel.objects.all()
-    # print(content)
     return render(request, 'index.html', {'contents': contents})
 
 
