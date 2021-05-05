@@ -1,41 +1,44 @@
 {% load static %}
 
 <link rel="stylesheet" href="{% static 'css/add.css' %}">
+
 <body>
-    
 
-<div class="container">
-    <img src="/static/img/Logo.svg" class="logo" alt="logo">
-    <div class="card">
-        <h1>Add Your Startup</h1>
-        <form method="post">
-            {% csrf_token %}
 
-            <label class="name label">{{form.name.label_tag}}</label>
-            {{form.name}}
-    
-            <label class="description label">{{form.description.label_tag}}</label>
-            {{form.description}}
+    <div class="container">
+        <img src="/static/img/Logo.svg" class="logo" alt="logo">
+        <div class="card">
+            <h1>Add Your Startup</h1>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
 
-            <label class="email label">{{form.email.label_tag}}</label>
-            {{form.email}}
+                <label class="name label">{{form.name.label_tag}}</label>
+                {{form.name}}
 
-            <label class="awards label">{{form.awards.label_tag}}</label>
-            {{form.awards}}
+                <label class="description label">{{form.description.label_tag}}</label>
+                {{form.description}}
 
-            <label class="youtube label">{{form.youtube.label_tag}}</label>
-            {{form.youtube}}
+                <label class="email label">{{form.email.label_tag}}</label>
+                {{form.email}}
 
-            <label class="location label">{{form.location.label_tag}}</label>
-            {{form.location}}
+                <label class="email label">{{form.image.label_tag}}</label>
+                {{form.image}}
 
-            
-            <button type="submit">Add</button>
+                <label class="awards label">{{form.awards.label_tag}}</label>
+                {{form.awards}}
 
-        </form>
-        
+                <label class="youtube label">{{form.youtube.label_tag}}</label>
+                {{form.youtube}}
 
+                <label class="location label">{{form.location.label_tag}}</label>
+                {{form.location}}
+
+                <button type="submit">Add</button>
+
+            </form>
+
+
+        </div>
     </div>
-</div>
-{% include 'footer.html'%}
+    {% include 'footer.html'%}
 </body>

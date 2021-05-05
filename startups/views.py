@@ -5,13 +5,12 @@ from . import models
 
 def add_startup(request):
     if request.method == 'POST':
-        form = AddStartupForm(request.POST)
+        form = AddStartupForm(request.POST, request.FILES)
         print(form.is_valid())
         if form.is_valid():
             detail = form.save(commit=False)
             detail.startup_user = request.user
             detail.save()
-            # form.save()
             try:
                 print(request.user)
                 form.save()
@@ -29,7 +28,6 @@ def add_startup(request):
 def update_startup(request, str):
     obj = get_object_or_404(models.StartupModel, id=str,
                             startup_user=request.user)
-    # print(f'\n\n\nobj {obj}')
     form = AddStartupForm(request.POST, instance=obj)
 
     if form.is_valid():
@@ -42,13 +40,19 @@ def update_startup(request, str):
 
 def view_startup(request, str):
     obj = models.StartupModel.objects.filter(id=str)
-    return render(request, 'details.html', {'contents': obj})
+    youtube = models.StartupModel.objects.filter(id=str)
+    youtube = [item.youtube for item in youtube][0]
+    # print('YOUTUBE\n\n', len(youtube))
+    if len(youtube) == 0:
+        return render(request, 'details.html', {'contents': obj})
+    else:
+        youtube = youtube.split('watch?v=')[1]
+        embed = 'https://www.youtube.com/embed/' + youtube
+        return render(request, 'details.html', {'contents': obj, 'embed': embed})
 
 
-def display_startup(request):
-    # content = models.StartupModel.objects.all()
+def display_my_startups(request):
     content = models.StartupModel.objects.filter(startup_user=request.user)
-    print(content)
     return render(request, 'view.html', {'contents': content})
 
 

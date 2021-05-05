@@ -7,10 +7,11 @@
    <body>
        
        
+
        <h1 class="heading">Startups</h1>
        <img src="/static/img/Logo.svg" class="logo" alt="logo">
        <div class="container">
-           
+
            <table>
                <tr>
                    <th>Name</th>
@@ -20,18 +21,18 @@
                </tr>
                {% for content in contents %}
                <tr>
-                    <td><label class="label name">{{ content.name }}</label></td>
-                    <td><label class="label description">{{ content.description|truncatechars:50 }}</label></td>
-                    <td><label class="label email">{{ content.email }}</label></td>
-                    <td>
-                    <a class="relative" href="/startups/update/{{content.id}}">Update </a><br><br>
-                    <a class="relative" href="/startups/delete/{{content.id}}">Delete </a>
-                    </td>
-                </tr>
-                {% endfor %}
-            </table>
-           
-           
+                   <td><label class="label name">{{ content.name }}</label></td>
+                   <td><label class="label description">{{ content.description|truncatechars:50 }}</label></td>
+                   <td><label class="label email">{{ content.email }}</label></td>
+                   <td>
+                       <a class="relative" href="/startups/update/{{content.id}}">Update </a><br><br>
+                       <a class="relative" href="/startups/delete/{{content.id}}">Delete </a>
+                   </td>
+               </tr>
+               {% endfor %}
+           </table>
+
+
        </div>
 
    </body>

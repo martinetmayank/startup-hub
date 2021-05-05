@@ -6,8 +6,10 @@
 {% block content %}
 
 <body>
+
     {% include 'navbar.html'%}
     <b><p class="hello">Hello, {{ user.username|default:'Guest' }}!</p></b>
+
     <div class="container">
        
         {% for content in contents %}

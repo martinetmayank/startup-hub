@@ -6,12 +6,14 @@
     <img src="/static/img/Logo.svg" class="logo" alt="logo">
     <div class="card">
         <h1>Update Your Startup Information</h1>
+        {{ startup }}
+
         <form method="post">
             {% csrf_token %}
 
             <label class="name label">{{form.name.label_tag}}</label>
             {{form.name}}
-    
+
             <label class="description label">{{form.description.label_tag}}</label>
             {{form.description}}
 
@@ -28,7 +30,7 @@
             <label class="location label">{{form.location.label_tag}}</label>
             {{form.location}}
 
-            
+
             <button type="submit">Update</button>
 
         </form>

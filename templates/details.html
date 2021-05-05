@@ -1,6 +1,6 @@
 {% load static %}
 
-   <link rel="stylesheet" href="{% static 'css/details.css' %}">
+<link rel="stylesheet" href="{% static 'css/details.css' %}">
 
 <body>
     <h1 class="heading">Startup Details</h1>
@@ -8,7 +8,7 @@
 
     <table>
         {% for content in contents %}
-        
+
         <tr>
             <th>Name</th>
             <td><label class="label name">{{ content.name }}</label></td>
@@ -25,13 +25,30 @@
         </tr>
 
         <tr>
+            <th>Image</th>
+            <td>
+                <label class="label email">
+                    <img src="{{content.image.url }}" height="200px">
+                </label>
+            </td>
+        </tr>
+
+        <tr>
             <th>Awards</th>
             <td><label class="label awards">{{ content.awards }}</label></td>
         </tr>
 
         <tr>
             <th>Youtube</th>
-            <td><label class="label youtube">{{ content.youtube }}</label></td>
+            <td>
+                {% if embed %}
+                <label class="label youtube">
+                    <iframe width="500" height="315" src="{{embed}}">
+                    </iframe>
+                </label>
+                {% endif %}
+            </td>
+
         </tr>
 
         <tr>
@@ -39,12 +56,17 @@
             <td><label class="label location">{{ content.location }}</label></td>
         </tr>
 
+        <tr>
+            <th>Date Added</th>
+            <td><label class="label location">{{ content.date_added }}</label></td>
+        </tr>
+
         {% endfor %}
     </table>
-    
 
 
 
-{% include 'footer.html'%}
+
+    {% include 'footer.html'%}
 
 </body>
