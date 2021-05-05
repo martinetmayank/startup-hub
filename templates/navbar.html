@@ -1,0 +1,30 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+
+<body>
+    
+    <nav>
+        <img src="/static/img/Logo.svg" class="logo" alt="logo">
+        <a href="/" style="text-decoration: none;"><h1 class="top-heading">Let's Startup</h1></a>
+        <form action="/search" method="GET">
+            <input type="text" placeholder="Search..." class="search" name="search">
+            <i class="fa fa-search fa-lg fa-fw"></i>
+            <button type="submit" class="btn-search">Search</button>
+        </form>
+        {% if user.is_authenticated %}
+        
+        <a href="startups/add/" class="drop add">Add Startup</a>
+        <a href="startups/view/" class="drop update">Update Startup</a>
+        <a href="accounts/logout/" class="drop logout">Logout</a>
+               
+        {% else %}
+        <a href="accounts/login/" class="btn-add" style="text-decoration: none;">Add Your Startup</a>
+        <a href="accounts/login/" class="drop login" style="text-decoration: none;">Login</a>
+        <a href="accounts/signup/" class="drop signup" style="text-decoration: none;">Signup</a>
+        {% endif %}
+        
+
+
+    </nav>
+</body>

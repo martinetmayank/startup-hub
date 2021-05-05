@@ -6,41 +6,22 @@
 {% block content %}
 
 <body>
-
-    <nav>
-        <img src="/static/img/Logo.svg" class="logo" alt="logo">
-        <a href="/"><h1 class="top-heading">Startup Hub</h1></a>
-        <form action="/search" method="GET">
-            <input type="text" placeholder="Search..." class="search" name="search">
-            <button type="submit" class="btn-search">Search</button>
-        </form>
-        <i class="fa fa-search fa-2x fa-fw"></i>
-        <b><p class="hello">Hello, {{ user.username|default:'Guest' }}!</p></b>
-
-
-        <div class="dropdown">
-            <a href=""><i class="fas fa-user fa-3x"></i></a>
-            <div class="dropdown-content">
-                {% if user.is_authenticated %}
-                <a href="accounts/logout/" class="drop logout">Logout</a>
-                <a href="startups/add/" class="drop add">Add Startup</a>
-                <a href="startups/view/" class="drop update">Update Startup</a>
-                {% else %}
-                <a href="accounts/login/" class="drop login">Login</a>
-                <a href="accounts/signup/" class="drop signup">Signup</a>
-                {% endif %}
-            </div>
-        </div>
-
-    </nav>
+    {% include 'navbar.html'%}
+    <b><p class="hello">Hello, {{ user.username|default:'Guest' }}!</p></b>
     <div class="container">
+       
         {% for content in contents %}
         <div class="card">
-            <a href="/startups/details/{{ content.id }}" class="label name">{{ content.name }}</a><br>
+            <div class="card-img">
+                <img src="/static/img/Logo.svg" class="cd-img">
+            </div>
+            <div class="card-details">
+            <a href="/startups/details/{{ content.id }}" class="label name">{{ content.name }}</a><br><br><br>
 
-            <label class="label description">{{ content.description }}</label><br>
+            <label class="label description">{{ content.description }}</label><br><br>
 
             <label class="label email">{{ content.email }}</label><br>
+            </div>
         </div>
         {% endfor %}
     </div>
