@@ -1,0 +1,41 @@
+.logo {
+    width: 200px;
+    height: 200px;
+    background-color: #787cd1;
+    position: relative;
+    top: -255px;
+    left: 15px;
+
+}
+.heading{
+    display: block;
+    text-align: center;
+    color: white;
+    background-color: #302b60;
+    font-size: 60px;
+    padding: 80px;
+}
+
+table{
+    position: relative;
+    top: -100px;
+    left: 10%;
+    width: 80%;
+    text-align: center;
+    border: 3px solid black;
+    border-collapse: collapse;
+}
+th,td{
+    border: 3px solid black;
+    padding: 20px;
+}
+th{
+    font-size: 30px;
+}
+td{
+    font-size: 20px;
+}
+
+tr:nth-child(even){
+    background-color: rgb(170, 164, 164);
+}

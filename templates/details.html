@@ -1,14 +1,49 @@
+{% load static %}
+
+   <link rel="stylesheet" href="{% static 'css/details.css' %}">
+
 <body>
+    <h1 class="heading">Startup Details</h1>
+    <img src="/static/img/Logo.svg" class="logo" alt="logo">
+
+    <table>
+        {% for content in contents %}
+        
+        <tr>
+            <th>Name</th>
+            <td><label class="label name">{{ content.name }}</label></td>
+        </tr>
+
+        <tr>
+            <th>Description</th>
+            <td><label class="label description">{{ content.description|truncatechars:50 }}</label></td>
+        </tr>
+
+        <tr>
+            <th>Email</th>
+            <td><label class="label email">{{ content.email }}</label></td>
+        </tr>
+
+        <tr>
+            <th>Awards</th>
+            <td><label class="label awards">{{ content.awards }}</label></td>
+        </tr>
+
+        <tr>
+            <th>Youtube</th>
+            <td><label class="label youtube">{{ content.youtube }}</label></td>
+        </tr>
+
+        <tr>
+            <th>location</th>
+            <td><label class="label location">{{ content.location }}</label></td>
+        </tr>
+
+        {% endfor %}
+    </table>
     
 
-{% for content in contents %}
-<b>Name</b>: {{ content.name }} <br>
-<b>Description</b>: {{ content.description }} <br>
-<b>Email</b>: {{ content.email }} <br>
-<b>Awards</b>: {{ content.awards }} <br>
-<b>Youtube</b>: {{ content.youtube }} <br>
-<b>Location</b>: {{ content.location }} <br>
-{% endfor %}
+
 
 {% include 'footer.html'%}
 

@@ -2,6 +2,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    overflow-x: hidden;
 }
 .container {
     flex: 1;  
@@ -14,7 +15,6 @@ footer {
     background-color: black;
     color: #bbb;
     line-height: 1.5;
-    width: 100%;
     margin-top: 300px;
   }
 .ft-main{
@@ -23,7 +23,7 @@ footer {
 }
 .ft-main-item{
     min-width: 300px;
-    padding: 40px;
+    padding: 10px;
 }
 .ft-title{
     text-align: center;
@@ -95,7 +95,7 @@ input[type="submit"] {
 }
 .ft-legal-list li{
     color: white;
-    min-width: 400px;
+    min-width: 310px;
     margin: 20px 100px;
     
 }
