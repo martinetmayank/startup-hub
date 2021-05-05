@@ -5,13 +5,12 @@ from . import models
 
 def add_startup(request):
     if request.method == 'POST':
-        form = AddStartupForm(request.POST)
+        form = AddStartupForm(request.POST, request.FILES)
         print(form.is_valid())
         if form.is_valid():
             detail = form.save(commit=False)
             detail.startup_user = request.user
             detail.save()
-            # form.save()
             try:
                 print(request.user)
                 form.save()
