@@ -29,7 +29,6 @@ def add_startup(request):
 def update_startup(request, str):
     obj = get_object_or_404(models.StartupModel, id=str,
                             startup_user=request.user)
-    # print(f'\n\n\nobj {obj}')
     form = AddStartupForm(request.POST, instance=obj)
 
     if form.is_valid():
@@ -46,7 +45,6 @@ def view_startup(request, str):
 
 
 def display_startup(request):
-    # content = models.StartupModel.objects.all()
     content = models.StartupModel.objects.filter(startup_user=request.user)
     print(content)
     return render(request, 'view.html', {'contents': content})

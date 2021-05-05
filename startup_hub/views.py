@@ -14,6 +14,10 @@ def search(request):
     result = models.StartupModel.objects.filter(
         Q(description__icontains=search) | Q(name__icontains=search)
     )
+    if result.count() > 1:
+        print(f'\n\nresult, {result}')
+        return render(request, 'search.html', {'contents': result})
 
-    print(f'\n\nresult, {result}')
-    return render(request, 'search.html', {'contents': result})
+    else:
+        MESSAGE = 'No results found...'
+        return render(request, 'search.html', {'message': MESSAGE})
