@@ -41,12 +41,16 @@ def update_startup(request, str):
 
 def view_startup(request, str):
     obj = models.StartupModel.objects.filter(id=str)
-    return render(request, 'details.html', {'contents': obj})
+    youtube = models.StartupModel.objects.filter(id=str)
+    youtube = [item.youtube for item in youtube][0]
+    youtube = youtube.split('watch?v=')[1]
+    embed = 'https://www.youtube.com/embed/' + youtube
+
+    return render(request, 'details.html', {'contents': obj, 'embed': embed})
 
 
 def display_startup(request):
     content = models.StartupModel.objects.filter(startup_user=request.user)
-    print(content)
     return render(request, 'view.html', {'contents': content})
 
 
